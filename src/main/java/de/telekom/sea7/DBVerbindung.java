@@ -26,8 +26,11 @@ public class DBVerbindung {
 		try (Connection con = DriverManager.getConnection(URL, user, password)) {
 			System.out.println("Verbindung erfolgreich hergestellt!");
 			try (Statement stm = con.createStatement()) {
-				try (ResultSet rs = stm.executeQuery("select count (*) from personen")) {
-					try (ResultSet za = stm.executeQuery("select * from zahlungen")) {
+				try (ResultSet rs = stm.executeQuery("select count(*) from personen")) {
+				//try (ResultSet rs = stm.executeQuery("update personen set Vorname = 'Adelheit' where id = 5")) {
+				//try (ResultSet rs = stm.executeQuery("delete from personen where id = 5")) {	
+				//try (ResultSet rs = stm.executeQuery("insert into personen (Vorname, Nachname) values ('Harald','Juncke')")){ 
+				try (ResultSet za = stm.executeQuery("select * from zahlungen")) {
 						while (rs.next()) {
 							// System.out.println(rs.getString(1) + " " + rs.getString(2) + " " +
 							// rs.getString(3));
