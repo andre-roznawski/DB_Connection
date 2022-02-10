@@ -21,8 +21,8 @@ public class DBVerbindung {
 
 		// Connection
 		final String URL = "jdbc:mariadb://localhost:3306/myfirstdb";
-		String user = "admin";
-		String password = "start123";
+		final String user = "admin";
+		final String password = "start123";
 		try (Connection con = DriverManager.getConnection(URL, user, password)) {
 			System.out.println("Verbindung erfolgreich hergestellt!");
 			try (Statement stm = con.createStatement()) {
