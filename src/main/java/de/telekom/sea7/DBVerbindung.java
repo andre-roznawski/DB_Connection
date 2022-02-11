@@ -7,22 +7,12 @@ import java.util.Properties;
 public class DBVerbindung {
 
 	public static void main(String[] args) {
-		// System.out.println(DBVerbindung.class.getCanonicalName());
-
-//		// Laden des Treibers
-//		final String DRIVER = "org.mariadb.jdbc.Driver";
-//
-//		try {
-//			Class.forName(DRIVER);
-//		} catch (ClassNotFoundException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-
+		
 		// Connection
 		final String URL = "jdbc:mariadb://localhost:3306/myfirstdb";
 		final String user = "admin";
 		final String password = "start123";
+		
 		try (Connection con = DriverManager.getConnection(URL, user, password)) {
 			System.out.println("Verbindung erfolgreich hergestellt!");
 			try (Statement stm = con.createStatement()) {
